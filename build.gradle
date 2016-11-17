@@ -1,7 +1,9 @@
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'war'
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+plugins {
+    id 'java'
+    id 'idea'
+    id 'war'
+    id 'org.akhikhl.gretty' version '1.4.0'
+}
 
 repositories {
     jcenter()
