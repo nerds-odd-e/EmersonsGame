@@ -21,6 +21,7 @@ dependencies {
 
 gretty {
     integrationTestTask = 'cucumber'
+    logDir = 'log'
 }
 
 task cucumber() {
