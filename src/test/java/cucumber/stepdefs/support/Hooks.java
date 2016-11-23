@@ -4,13 +4,14 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 import static com.odde.emersonsgame.data.support.Databases.getDatabaseTester;
+import static com.odde.emersonsgame.data.support.Databases.getNewDatabaseTester;
 import static cucumber.stepdefs.support.Url.url;
 import static cucumber.stepdefs.support.WebDriverFactory.getDriver;
 
 public class Hooks {
     @Before
     public void beforeScenario() throws Exception {
-        getDatabaseTester(true);
+        getNewDatabaseTester();
         getDriver(true).get(url());
     }
 

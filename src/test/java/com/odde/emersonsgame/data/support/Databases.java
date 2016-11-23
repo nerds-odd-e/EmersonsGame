@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 public class Databases {
     private static IDatabaseTester databaseTester;
 
-    public static IDatabaseTester getDatabaseTester(boolean reset) throws Exception {
+    public static IDatabaseTester getNewDatabaseTester() throws Exception {
         databaseTester = new JdbcDatabaseTester("org.sqlite.JDBC", "jdbc:sqlite:emersonsgame.db");
         databaseTester.setSetUpOperation(DatabaseOperation.CLEAN_INSERT);
         databaseTester.setTearDownOperation(DatabaseOperation.DELETE_ALL);
@@ -21,7 +21,7 @@ public class Databases {
 
     public static IDatabaseTester getDatabaseTester() throws Exception {
         if (databaseTester == null) {
-            databaseTester = getDatabaseTester(true);
+            databaseTester = getNewDatabaseTester();
         }
 
         return databaseTester;
