@@ -20,6 +20,7 @@ dependencies {
     testCompile 'info.cukes:cucumber-java8:1.2.5'
     testCompile 'org.seleniumhq.selenium:selenium-api:3.0.1'
     testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    testCompile 'org.dbunit:dbunit:2.5.3'
 }
 
 gretty {
