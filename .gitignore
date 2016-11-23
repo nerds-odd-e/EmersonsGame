@@ -5,3 +5,4 @@ build/
 *.iws
 out/
 log/*.log
+emersonsgame.db
