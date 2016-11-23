@@ -7,7 +7,8 @@
     </head>
     <body>
         <h1>Races</h1>
-        <table>
+
+        <table id="races">
             <thead>
                 <tr>
                     <th>Race</th>
