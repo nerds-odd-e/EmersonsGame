@@ -22,7 +22,7 @@ public class RaceRepositoryTest {
     @Before
     public void setUp() throws Exception {
         databaseTester = getDatabaseTester();
-        databaseTester.setDataSet(getDataSet(getClass()));
+        databaseTester.setDataSet(getDataSet("RaceRepositoryTest.xml"));
         databaseTester.onSetup();
 
         repository = new RaceRepositoryImpl();

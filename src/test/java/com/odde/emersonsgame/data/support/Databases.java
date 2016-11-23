@@ -9,16 +9,26 @@ import org.dbunit.operation.DatabaseOperation;
 import java.io.FileInputStream;
 
 public class Databases {
-    public static IDatabaseTester getDatabaseTester() throws ClassNotFoundException {
-        IDatabaseTester databaseTester = new JdbcDatabaseTester("org.sqlite.JDBC", "jdbc:sqlite:emersonsgame.db");
+    private static IDatabaseTester databaseTester;
+
+    public static IDatabaseTester getDatabaseTester(boolean reset) throws Exception {
+        databaseTester = new JdbcDatabaseTester("org.sqlite.JDBC", "jdbc:sqlite:emersonsgame.db");
         databaseTester.setSetUpOperation(DatabaseOperation.CLEAN_INSERT);
         databaseTester.setTearDownOperation(DatabaseOperation.DELETE_ALL);
 
         return databaseTester;
     }
 
-    public static IDataSet getDataSet(Class clazz) throws Exception {
-        String file = "src/test/resources/dataset/" + clazz.getSimpleName() + ".xml";
+    public static IDatabaseTester getDatabaseTester() throws Exception {
+        if (databaseTester == null) {
+            databaseTester = getDatabaseTester(true);
+        }
+
+        return databaseTester;
+    }
+
+    public static IDataSet getDataSet(String dataset) throws Exception {
+        String file = "src/test/resources/dataset/" + dataset;
 
         return new FlatXmlDataSetBuilder().build(new FileInputStream(file));
     }
