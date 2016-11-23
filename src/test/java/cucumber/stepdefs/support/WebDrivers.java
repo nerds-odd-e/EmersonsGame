@@ -6,13 +6,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class WebDrivers {
     private static WebDriver driver;
 
-    public static WebDriver getDriver() {
-        return getDriver(false);
+    public static WebDriver getNewDriver() {
+        return new FirefoxDriver();
     }
 
-    public static WebDriver getDriver(boolean reset) {
-        if (reset || (driver == null)) {
-            driver = new FirefoxDriver();
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            driver = getNewDriver();
         }
 
         return driver;
