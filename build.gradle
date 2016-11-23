@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'war'
     id 'org.akhikhl.gretty' version '1.4.0'
+    id 'org.flywaydb.flyway' version '4.0.3'
 }
 
 repositories {
@@ -24,6 +25,10 @@ dependencies {
 gretty {
     integrationTestTask = 'cucumber'
     logDir = 'log'
+}
+
+flyway {
+    url = 'jdbc:sqlite:emersonsgame.db'
 }
 
 task cucumber() {
