@@ -1,0 +1,5 @@
+<dataset>
+    <races name="Race 1" started_at="2016-11-24 1:30:00" finished_at="2016-11-24 1:40:00" />
+    <races name="Race 2" started_at="2016-11-24 1:45:00" />
+    <races name="Race 3" started_at="2016-11-24 1:50:00" />
+</dataset>
