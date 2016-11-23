@@ -3,7 +3,7 @@ package cucumber.stepdefs.support;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class WebDriverFactory {
+public class WebDrivers {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
