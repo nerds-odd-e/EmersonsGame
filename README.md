@@ -28,5 +28,5 @@ To generate project files for IntelliJ IDEA:
 
 ```
   ./gradlew idea
-``
+```
 
