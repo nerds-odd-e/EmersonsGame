@@ -8,13 +8,19 @@ Inspired by Emerson's famous race game!
 
 Run unit, integration, and acceptance tests:
 
-`./gradlew test cucumber`
+```
+  ./gradlew test cucumber
+```
 
 To start the application:
 
-`./gradlew appStart`
+```
+  ./gradlew appStart
+```
 
 To generate project files for IntelliJ IDEA:
 
-`./gradlew idea`
+```
+  ./gradlew idea
+``
 
