@@ -49,7 +49,7 @@ public class RacesController extends HttpServlet {
         this.listRacesService = listRacesService;
     }
 
-    public void setCreateRaceService(CreateRaceService createRaceService) {
+    void setCreateRaceService(CreateRaceService createRaceService) {
         this.createRaceService = createRaceService;
     }
 }
