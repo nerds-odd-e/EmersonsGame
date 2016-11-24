@@ -14,7 +14,6 @@ public class Databases {
     public static IDatabaseTester getNewDatabaseTester() throws Exception {
         databaseTester = new JdbcDatabaseTester("org.sqlite.JDBC", "jdbc:sqlite:emersonsgame.db");
         databaseTester.setSetUpOperation(DatabaseOperation.CLEAN_INSERT);
-        databaseTester.setTearDownOperation(DatabaseOperation.DELETE_ALL);
 
         return databaseTester;
     }
@@ -28,6 +27,8 @@ public class Databases {
     }
 
     public static IDataSet getDataSet(String dataset) throws Exception {
+        databaseTester.setTearDownOperation(DatabaseOperation.DELETE_ALL);
+
         String file = "src/test/resources/dataset/" + dataset;
 
         return new FlatXmlDataSetBuilder().build(new FileInputStream(file));
