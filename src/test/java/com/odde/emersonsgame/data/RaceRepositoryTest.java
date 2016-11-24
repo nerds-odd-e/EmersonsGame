@@ -46,7 +46,7 @@ public class RaceRepositoryTest {
     public void CreateMustCreateNewRace() {
         Date currentTimestamp = new Date();
 
-        Race race = new Race("Race", currentTimestamp, null);
+        Race race = new Race(null, "Race", currentTimestamp, null);
 
         Race savedRace = repository.create(race);
 

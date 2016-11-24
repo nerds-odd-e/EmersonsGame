@@ -31,11 +31,12 @@ public class RaceRepositoryImpl implements RaceRepository {
             rs = ps.executeQuery();
 
             while (rs.next()) {
+                Long id = rs.getLong("id");
                 String name = rs.getString("name");
                 Date startedAt = rs.getTimestamp("started_at");
                 Date finishedAt = rs.getTimestamp("finished_at");
 
-                Race race = new Race(name, startedAt, finishedAt);
+                Race race = new Race(id, name, startedAt, finishedAt);
 
                 races.add(race);
             }
