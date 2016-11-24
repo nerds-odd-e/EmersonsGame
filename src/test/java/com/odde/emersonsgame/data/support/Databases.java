@@ -26,7 +26,7 @@ public class Databases {
         return databaseTester;
     }
 
-    public static IDataSet getDataSet(String dataset) throws Exception {
+    public static IDataSet getDataSet(final String dataset) throws Exception {
         databaseTester.setTearDownOperation(DatabaseOperation.DELETE_ALL);
 
         String file = "src/test/resources/dataset/" + dataset;

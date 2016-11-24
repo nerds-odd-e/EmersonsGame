@@ -97,7 +97,7 @@ public class RacesControllerTest {
         assertThat(captor.getValue(), is("/WEB-INF/pages/races/index.jsp"));
     }
 
-    private void assertThatRacesAttributeContains(List<Race> races) {
+    private void assertThatRacesAttributeContains(final List<Race> races) {
         ArgumentCaptor<String> keyCaptor = ArgumentCaptor.forClass(String.class);
 
         @SuppressWarnings("unchecked")
@@ -117,7 +117,7 @@ public class RacesControllerTest {
         assertThat(captor.getValue(), is("http://localhost:8080/EmersonsGame/races"));
     }
 
-    private void assertThatRaceCreatedHasAttributes(String name) {
+    private void assertThatRaceCreatedHasAttributes(final String name) {
         ArgumentCaptor<Race> captor = ArgumentCaptor.forClass(Race.class);
 
         verify(createRaceService).createRace(captor.capture());

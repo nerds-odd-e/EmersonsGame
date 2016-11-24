@@ -12,12 +12,12 @@ public class CreateRaceServiceImpl implements CreateRaceService {
         this(new RaceRepositoryImpl());
     }
 
-    public CreateRaceServiceImpl(RaceRepository raceRepository) {
+    public CreateRaceServiceImpl(final RaceRepository raceRepository) {
         this.raceRepository = raceRepository;
     }
 
     @Override
-    public Race createRace(Race race) {
+    public Race createRace(final Race race) {
         return raceRepository.create(race);
     }
 }

@@ -41,7 +41,7 @@ public class CreateRaceServiceTest {
         assertThatRaceCreatedHasAttributes("New Race");
     }
 
-    private void assertThatRaceCreatedHasAttributes(String name) {
+    private void assertThatRaceCreatedHasAttributes(final String name) {
         ArgumentCaptor<Race> captor = ArgumentCaptor.forClass(Race.class);
 
         verify(raceRepository).create(captor.capture());

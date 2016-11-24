@@ -14,7 +14,7 @@ public class ListRacesServiceImpl implements ListRacesService {
         this(new RaceRepositoryImpl());
     }
 
-    public ListRacesServiceImpl(RaceRepository raceRepository) {
+    public ListRacesServiceImpl(final RaceRepository raceRepository) {
         this.raceRepository = raceRepository;
     }
 

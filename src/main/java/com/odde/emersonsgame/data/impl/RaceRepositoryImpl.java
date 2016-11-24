@@ -53,7 +53,7 @@ public class RaceRepositoryImpl implements RaceRepository {
     }
 
     @Override
-    public Race create(Race race) {
+    public Race create(final Race race) {
         String sql = "INSERT INTO races (name, started_at) VALUES (?, ?)";
 
         Connection c = null;

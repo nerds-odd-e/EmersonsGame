@@ -15,11 +15,11 @@ public class Race {
         this(null, null, null, null);
     }
 
-    public Race(String name) {
+    public Race(final String name) {
         this(null, name, new Date(), null);
     }
 
-    public Race(Long id, String name, Date startedAt, Date finishedAt) {
+    public Race(final Long id, final String name, final Date startedAt, final Date finishedAt) {
         this.players = new ArrayList<Player>();
 
         this.id = id;
@@ -28,7 +28,7 @@ public class Race {
         this.finishedAt = finishedAt;
     }
 
-    public Race(Long id, Race race) {
+    public Race(final Long id, final Race race) {
         this(id, race.getName(), race.getStartedAt(), race.getFinishedAt());
     }
 
