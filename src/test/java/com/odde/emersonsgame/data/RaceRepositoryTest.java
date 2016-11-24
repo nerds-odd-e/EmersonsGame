@@ -51,6 +51,7 @@ public class RaceRepositoryTest {
         Race savedRace = repository.create(race);
 
         assertThat(savedRace, notNullValue());
+        assertThat(savedRace.getId(), notNullValue());
         assertThat(savedRace.getName(), is("Race"));
         assertThat(savedRace.getStartedAt(), is(currentTimestamp));
     }

@@ -4,10 +4,7 @@ import com.odde.emersonsgame.data.DataException;
 import com.odde.emersonsgame.data.RaceRepository;
 import com.odde.emersonsgame.model.Race;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -57,6 +54,46 @@ public class RaceRepositoryImpl implements RaceRepository {
 
     @Override
     public Race create(Race race) {
-        return race;
+        String sql = "INSERT INTO races (name, started_at) VALUES (?, ?)";
+
+        Connection c = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            c = getConnection();
+
+            ps = c.prepareStatement(sql);
+            ps.setString(1, race.getName());
+            ps.setTimestamp(2, new Timestamp(race.getStartedAt().getTime()));
+
+            ps.executeUpdate();
+
+            rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+                Long id = rs.getLong(1);
+
+                return new Race(id, race);
+            } else {
+                throw new DataException();
+            }
+        } catch (SQLException e) {
+            throw new DataException(e);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+
+                if (ps != null) {
+                    ps.close();
+                }
+
+                c.close();
+            } catch (SQLException e) {
+                throw new DataException(e);
+            }
+        }
     }
 }
