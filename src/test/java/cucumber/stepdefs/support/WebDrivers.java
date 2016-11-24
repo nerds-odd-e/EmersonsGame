@@ -7,7 +7,9 @@ public class WebDrivers {
     private static WebDriver driver;
 
     public static WebDriver getNewDriver() {
-        return new FirefoxDriver();
+        driver = new FirefoxDriver();
+
+        return driver;
     }
 
     public static WebDriver getDriver() {
