@@ -13,12 +13,12 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/races")
-public class ListRacesController extends HttpServlet {
+public class RacesController extends HttpServlet {
     static final String RACES = "races";
 
     private ListRacesService listRacesService;
 
-    public ListRacesController() {
+    public RacesController() {
         listRacesService = new ListRacesServiceImpl();
     }
 

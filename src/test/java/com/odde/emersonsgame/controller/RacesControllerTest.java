@@ -23,8 +23,8 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class ListRacesControllerTest {
-    private ListRacesController controller;
+public class RacesControllerTest {
+    private RacesController controller;
 
     @Mock
     private HttpServletRequest request;
@@ -42,7 +42,7 @@ public class ListRacesControllerTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        controller = new ListRacesController();
+        controller = new RacesController();
         controller.setListRacesService(listRacesService);
 
         when(request.getRequestDispatcher(anyString())).thenReturn(requestDispatcher);
@@ -86,7 +86,7 @@ public class ListRacesControllerTest {
 
         verify(request).setAttribute(keyCaptor.capture(), valueCaptor.capture());
 
-        assertThat(keyCaptor.getValue(), is(ListRacesController.RACES));
+        assertThat(keyCaptor.getValue(), is(RacesController.RACES));
         assertThat(valueCaptor.getValue(), is(races));
     }
 }
