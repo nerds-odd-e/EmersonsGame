@@ -35,12 +35,12 @@ public class NewRaceControllerTest {
         MockitoAnnotations.initMocks(this);
 
         controller = new NewRaceController();
+
+        when(request.getRequestDispatcher(anyString())).thenReturn(requestDispatcher);
     }
 
     @Test
     public void NewRaceMustDisplayPage() throws ServletException, IOException {
-        when(request.getRequestDispatcher(anyString())).thenReturn(requestDispatcher);
-
         controller.doGet(request, response);
 
         ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
