@@ -14,11 +14,6 @@
 
             <br />
 
-            <label for="players">Players</label>
-            <input id="players" name="players" />
-
-            <br />
-
             <input id="submit" type="submit" />
         </form>
     </body>

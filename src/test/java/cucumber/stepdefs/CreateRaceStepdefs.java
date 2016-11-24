@@ -17,7 +17,6 @@ public class CreateRaceStepdefs implements En {
             getDriver().get(url("/races/new"));
 
             getDriver().findElement(By.id("name")).sendKeys("New Race");
-            getDriver().findElement(By.id("players")).sendKeys("4");
 
             getDriver().findElement(By.id("submit")).click();
         });
