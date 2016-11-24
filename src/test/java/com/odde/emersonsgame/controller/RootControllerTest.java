@@ -38,6 +38,10 @@ public class RootControllerTest {
     public void ResponseMustOutputHelloWorld() throws ServletException, IOException {
         controller.doGet(request, response);
 
+        assertThatControllerRedirectsToRacesPage();
+    }
+
+    private void assertThatControllerRedirectsToRacesPage() throws IOException {
         ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
 
         verify(response).sendRedirect(captor.capture());
