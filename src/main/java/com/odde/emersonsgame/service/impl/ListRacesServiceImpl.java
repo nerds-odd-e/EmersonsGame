@@ -11,15 +11,15 @@ public class ListRacesServiceImpl implements ListRacesService {
     private RaceRepository raceRepository;
 
     public ListRacesServiceImpl() {
-        raceRepository = new RaceRepositoryImpl();
+        this(new RaceRepositoryImpl());
+    }
+
+    public ListRacesServiceImpl(RaceRepository raceRepository) {
+        this.raceRepository = raceRepository;
     }
 
     @Override
     public List<Race> getAllRaces() {
         return raceRepository.getAll();
-    }
-
-    public void setRaceRepository(RaceRepository raceRepository) {
-        this.raceRepository = raceRepository;
     }
 }

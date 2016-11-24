@@ -19,10 +19,7 @@ public class ListRacesServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        ListRacesServiceImpl service = new ListRacesServiceImpl();
-        service.setRaceRepository(raceRepository);
-
-        this.service = service;
+        service = new ListRacesServiceImpl(raceRepository);
     }
 
     @Test
