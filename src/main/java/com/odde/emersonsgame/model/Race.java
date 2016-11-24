@@ -11,11 +11,19 @@ public class Race {
     private Date finishedAt;
 
     public Race() {
-        players = new ArrayList<Player>();
+        this(null, null, null);
+    }
+
+    public Race(String name, Date startedAt, Date finishedAt) {
+        this.players = new ArrayList<Player>();
+
+        this.name = name;
+        this.startedAt = startedAt;
+        this.finishedAt = finishedAt;
     }
 
     public String getName() {
-        return "This is a Race";
+        return name;
     }
 
     public List<Player> getPlayers() {
@@ -26,10 +34,10 @@ public class Race {
     }
 
     public Date getStartedAt() {
-        return new Date();
+        return startedAt;
     }
 
     public Date getFinishedAt() {
-        return new Date();
+        return finishedAt;
     }
 }

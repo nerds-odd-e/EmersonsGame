@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static com.odde.emersonsgame.data.impl.Connections.getConnection;
@@ -30,7 +31,13 @@ public class RaceRepositoryImpl implements RaceRepository {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                races.add(new Race());
+                String name = rs.getString("name");
+                Date startedAt = rs.getTimestamp("started_at");
+                Date finishedAt = rs.getTimestamp("finished_at");
+
+                Race race = new Race(name, startedAt, finishedAt);
+
+                races.add(race);
             }
 
             return races;
