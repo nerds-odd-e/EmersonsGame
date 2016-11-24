@@ -41,7 +41,7 @@ task cucumber() {
                     '--plugin', 'json:build/cucumber-json-report.json',
                     '--glue',   'cucumber.stepdefs',
                     '--tags',   '~@wip',
-                    'src/test/features'
+                    project.findProperty('feature') ?: 'src/test/features'
             ]
         }
     }
