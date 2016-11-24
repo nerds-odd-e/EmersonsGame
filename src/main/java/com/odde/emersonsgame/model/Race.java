@@ -14,6 +14,10 @@ public class Race {
         this(null, null, null);
     }
 
+    public Race(String name) {
+        this(name, new Date(), null);
+    }
+
     public Race(String name, Date startedAt, Date finishedAt) {
         this.players = new ArrayList<Player>();
 
