@@ -94,7 +94,7 @@ public class RacesControllerTest {
 
         verify(request).getRequestDispatcher(captor.capture());
 
-        assertThat(captor.getValue(), is("pages/races/index.jsp"));
+        assertThat(captor.getValue(), is("/WEB-INF/pages/races/index.jsp"));
     }
 
     private void assertThatRacesAttributeContains(List<Race> races) {

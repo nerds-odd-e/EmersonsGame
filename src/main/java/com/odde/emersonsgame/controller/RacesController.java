@@ -33,7 +33,7 @@ public class RacesController extends HttpServlet {
 
         req.setAttribute(RACES, races);
 
-        req.getRequestDispatcher("pages/races/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/pages/races/index.jsp").forward(req, resp);
     }
 
     @Override

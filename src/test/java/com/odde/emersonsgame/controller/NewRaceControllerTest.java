@@ -47,6 +47,6 @@ public class NewRaceControllerTest {
 
         verify(request).getRequestDispatcher(captor.capture());
 
-        assertThat(captor.getValue(), is("/pages/races/new.jsp"));
+        assertThat(captor.getValue(), is("/WEB-INF/pages/races/new.jsp"));
     }
 }
