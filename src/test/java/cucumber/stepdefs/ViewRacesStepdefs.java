@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThat;
 
 public class ViewRacesStepdefs implements En {
     public ViewRacesStepdefs() {
-        Given("^I have races available", () -> {
+        Given("^I have races available$", () -> {
             try {
                 IDatabaseTester databaseTester = getDatabaseTester();
                 databaseTester.setDataSet(getDataSet("view_races.xml"));
