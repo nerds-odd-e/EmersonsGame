@@ -30,12 +30,12 @@ public class RootControllerTest {
         MockitoAnnotations.initMocks(this);
 
         controller = new RootController();
+
+        when(request.getContextPath()).thenReturn("http://localhost:8080/EmersonsGame");
     }
 
     @Test
     public void ResponseMustOutputHelloWorld() throws ServletException, IOException {
-        when(request.getContextPath()).thenReturn("http://localhost:8080/EmersonsGame");
-
         controller.doGet(request, response);
 
         ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
