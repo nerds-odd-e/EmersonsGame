@@ -43,6 +43,10 @@ public class NewRaceControllerTest {
     public void NewRaceMustDisplayPage() throws ServletException, IOException {
         controller.doGet(request, response);
 
+        assertThatControllerForwardsToNewPage();
+    }
+
+    private void assertThatControllerForwardsToNewPage() {
         ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
 
         verify(request).getRequestDispatcher(captor.capture());
