@@ -28,6 +28,10 @@ public class Race {
         this.finishedAt = finishedAt;
     }
 
+    public Race(Long id, Race race) {
+        this(id, race.getName(), race.getStartedAt(), race.getFinishedAt());
+    }
+
     public Long getId() {
         return id;
     }
