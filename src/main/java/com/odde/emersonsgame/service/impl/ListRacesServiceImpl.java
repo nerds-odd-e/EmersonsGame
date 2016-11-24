@@ -18,4 +18,8 @@ public class ListRacesServiceImpl implements ListRacesService {
     public List<Race> getAllRaces() {
         return raceRepository.getAll();
     }
+
+    public void setRaceRepository(RaceRepository raceRepository) {
+        this.raceRepository = raceRepository;
+    }
 }
