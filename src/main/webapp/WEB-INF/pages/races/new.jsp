@@ -6,7 +6,7 @@
         <title>Emerson's Game</title>
     </head>
     <body>
-        <h1>Races</h1>
+        <h1>New Race</h1>
 
         <form action="<c:url value="/races"/>" method="post">
             <label for="name">Name</label>
