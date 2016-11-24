@@ -8,6 +8,11 @@
     <body>
         <h1>Races</h1>
 
+        <a href="<c:url value="/races/new" />">New Race</a>
+
+        <br />
+        <br />
+
         <table id="races">
             <thead>
                 <tr>
