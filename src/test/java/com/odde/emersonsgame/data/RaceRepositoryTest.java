@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.List;
 
 import static com.odde.emersonsgame.data.support.Databases.getDataSet;
@@ -34,10 +35,23 @@ public class RaceRepositoryTest {
     }
 
     @Test
-    public void testGetAllMustReturnAllRaces() {
+    public void GetAllMustReturnAllRaces() {
         List<Race> result = repository.getAll();
 
         assertThat(result, notNullValue());
         assertThat(result.size(), is(3));
+    }
+
+    @Test
+    public void CreateMustCreateNewRace() {
+        Date currentTimestamp = new Date();
+
+        Race race = new Race("Race", currentTimestamp, null);
+
+        Race savedRace = repository.create(race);
+
+        assertThat(savedRace, notNullValue());
+        assertThat(savedRace.getName(), is("Race"));
+        assertThat(savedRace.getStartedAt(), is(currentTimestamp));
     }
 }

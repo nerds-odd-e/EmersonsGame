@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RaceRepository {
     List<Race> getAll();
+    Race create(Race race);
 }

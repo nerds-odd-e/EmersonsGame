@@ -53,4 +53,9 @@ public class RaceRepositoryImpl implements RaceRepository {
             }
         }
     }
+
+    @Override
+    public Race create(Race race) {
+        return race;
+    }
 }
