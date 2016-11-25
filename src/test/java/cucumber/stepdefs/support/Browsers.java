@@ -7,7 +7,9 @@ public class Browsers {
     private static WebDriver driver;
 
     public static void openBrowser(final String url) {
-        driver = new FirefoxDriver();
+        if (driver == null) {
+            driver = new FirefoxDriver();
+        }
 
         driver.get(url);
     }
@@ -20,6 +22,8 @@ public class Browsers {
         if (driver != null) {
             browser().close();
             browser().quit();
+
+            driver = null;
         }
     }
 }
