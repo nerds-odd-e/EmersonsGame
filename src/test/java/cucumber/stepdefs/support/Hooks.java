@@ -7,13 +7,13 @@ import static com.odde.emersonsgame.data.support.Databases.getDatabaseTester;
 import static com.odde.emersonsgame.data.support.Databases.getNewDatabaseTester;
 import static cucumber.stepdefs.support.Url.url;
 import static cucumber.stepdefs.support.Browsers.browser;
-import static cucumber.stepdefs.support.Browsers.getNewDriver;
+import static cucumber.stepdefs.support.Browsers.openBrowser;
 
 public class Hooks {
     @Before
     public void beforeScenario() throws Exception {
         getNewDatabaseTester();
-        getNewDriver().get(url());
+        openBrowser().get(url());
     }
 
     @After
