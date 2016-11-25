@@ -23,8 +23,6 @@ public class CreateRaceStepdefs implements En {
         });
 
         Then("^I must see the new race$", () -> {
-            browser().get(url("/races"));
-
             List<WebElement> rows = browser().findElements(By.cssSelector("#races tbody tr"));
 
             assertThat(rows.size(), is(1));;
