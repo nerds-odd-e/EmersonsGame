@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.odde.emersonsgame.data.support.Databases.getDataSet;
 import static com.odde.emersonsgame.data.support.Databases.getDatabaseTester;
+import static cucumber.stepdefs.support.Browsers.openBrowser;
 import static cucumber.stepdefs.support.Url.url;
 import static cucumber.stepdefs.support.Browsers.browser;
 import static org.hamcrest.CoreMatchers.is;
@@ -27,7 +28,7 @@ public class ViewRacesStepdefs implements En {
         });
 
         When("^I try to view all races$", () -> {
-            browser().get(url("/races"));
+            openBrowser(url("/races"));
         });
 
         Then("^I must see all races$", () -> {

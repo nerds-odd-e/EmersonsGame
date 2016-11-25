@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static cucumber.stepdefs.support.Browsers.openBrowser;
 import static cucumber.stepdefs.support.Url.url;
 import static cucumber.stepdefs.support.Browsers.browser;
 import static org.hamcrest.CoreMatchers.is;
@@ -14,7 +15,7 @@ import static org.junit.Assert.assertThat;
 public class CreateRaceStepdefs implements En {
     public CreateRaceStepdefs() {
         When("^I try to create a new race$", () -> {
-            browser().get(url("/races/new"));
+            openBrowser(url("/races/new"));
 
             browser().findElement(By.id("name")).sendKeys("New Race");
 
