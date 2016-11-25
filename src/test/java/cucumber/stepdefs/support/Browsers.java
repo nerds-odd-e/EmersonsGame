@@ -15,4 +15,11 @@ public class Browsers {
     public static WebDriver browser() {
         return driver;
     }
+
+    public static void closeBrowser() {
+        if (driver != null) {
+            browser().close();
+            browser().quit();
+        }
+    }
 }
