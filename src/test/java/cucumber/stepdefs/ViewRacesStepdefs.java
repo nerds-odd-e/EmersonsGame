@@ -10,7 +10,7 @@ import java.util.List;
 import static com.odde.emersonsgame.data.support.Databases.getDataSet;
 import static com.odde.emersonsgame.data.support.Databases.getDatabaseTester;
 import static cucumber.stepdefs.support.Url.url;
-import static cucumber.stepdefs.support.Browsers.getDriver;
+import static cucumber.stepdefs.support.Browsers.browser;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -27,11 +27,11 @@ public class ViewRacesStepdefs implements En {
         });
 
         When("^I try to view all races$", () -> {
-            getDriver().get(url("/races"));
+            browser().get(url("/races"));
         });
 
         Then("^I must see all races$", () -> {
-            List<WebElement> rows = getDriver().findElements(By.cssSelector("#races tbody tr"));
+            List<WebElement> rows = browser().findElements(By.cssSelector("#races tbody tr"));
 
             assertThat(rows.size(), is(5));
         });

@@ -12,11 +12,7 @@ public class Browsers {
         return driver;
     }
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            driver = getNewDriver();
-        }
-
+    public static WebDriver browser() {
         return driver;
     }
 }

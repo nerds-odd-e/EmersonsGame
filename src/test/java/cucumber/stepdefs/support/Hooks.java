@@ -6,7 +6,7 @@ import cucumber.api.java.Before;
 import static com.odde.emersonsgame.data.support.Databases.getDatabaseTester;
 import static com.odde.emersonsgame.data.support.Databases.getNewDatabaseTester;
 import static cucumber.stepdefs.support.Url.url;
-import static cucumber.stepdefs.support.Browsers.getDriver;
+import static cucumber.stepdefs.support.Browsers.browser;
 import static cucumber.stepdefs.support.Browsers.getNewDriver;
 
 public class Hooks {
@@ -18,8 +18,8 @@ public class Hooks {
 
     @After
     public void afterScenario() throws Exception {
-        getDriver().close();
-        getDriver().quit();
+        browser().close();
+        browser().quit();
         getDatabaseTester().onTearDown();
     }
 }
