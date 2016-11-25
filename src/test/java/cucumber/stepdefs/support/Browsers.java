@@ -6,10 +6,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Browsers {
     private static WebDriver driver;
 
-    public static WebDriver openBrowser() {
+    public static void openBrowser(final String url) {
         driver = new FirefoxDriver();
 
-        return driver;
+        driver.get(url);
     }
 
     public static WebDriver browser() {

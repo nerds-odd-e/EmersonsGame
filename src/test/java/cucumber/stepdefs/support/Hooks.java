@@ -13,7 +13,7 @@ public class Hooks {
     @Before
     public void beforeScenario() throws Exception {
         getNewDatabaseTester();
-        openBrowser().get(url());
+        openBrowser(url());
     }
 
     @After
