@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static cucumber.stepdefs.support.Url.url;
-import static cucumber.stepdefs.support.WebDrivers.getDriver;
+import static cucumber.stepdefs.support.Browsers.getDriver;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 

@@ -6,8 +6,8 @@ import cucumber.api.java.Before;
 import static com.odde.emersonsgame.data.support.Databases.getDatabaseTester;
 import static com.odde.emersonsgame.data.support.Databases.getNewDatabaseTester;
 import static cucumber.stepdefs.support.Url.url;
-import static cucumber.stepdefs.support.WebDrivers.getDriver;
-import static cucumber.stepdefs.support.WebDrivers.getNewDriver;
+import static cucumber.stepdefs.support.Browsers.getDriver;
+import static cucumber.stepdefs.support.Browsers.getNewDriver;
 
 public class Hooks {
     @Before

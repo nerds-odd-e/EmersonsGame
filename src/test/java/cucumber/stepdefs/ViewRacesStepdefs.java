@@ -10,7 +10,7 @@ import java.util.List;
 import static com.odde.emersonsgame.data.support.Databases.getDataSet;
 import static com.odde.emersonsgame.data.support.Databases.getDatabaseTester;
 import static cucumber.stepdefs.support.Url.url;
-import static cucumber.stepdefs.support.WebDrivers.getDriver;
+import static cucumber.stepdefs.support.Browsers.getDriver;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
